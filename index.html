@@ -16,7 +16,6 @@
         // ============================================
         const imageUrls = {
             'title': '',
-            'mission-plan': '',
             'come-unto-christ': '',
             'temple-covenants': '',
             'strengthen': '',
@@ -371,7 +370,7 @@
         ];
 
         const nav = (d) => { 
-            state.slide = Math.max(0, Math.min(10, state.slide + d)); 
+            state.slide = Math.max(0, Math.min(9, state.slide + d)); 
             state.clicked = []; 
             state.quoteShown = false; 
             render(); 
@@ -381,8 +380,8 @@
             document.getElementById('root').innerHTML = `${slides[state.slide]()}
                 <div class="fixed bottom-0 w-full bg-gray-800 p-4 flex justify-between items-center z-50">
                     <button onclick="nav(-1)" ${state.slide === 0 ? 'disabled' : ''} class="px-6 py-3 rounded-xl bg-gray-700 hover:bg-gray-600 text-white disabled:opacity-30 font-semibold">← Previous</button>
-                    <div class="flex gap-2">${[...Array(11)].map((_, i) => `<button onclick="state.slide=${i};render()" class="w-3 h-3 rounded-full ${i === state.slide ? 'bg-blue-500 w-8' : 'bg-gray-600'}"></button>`).join('')}</div>
-                    <button onclick="nav(1)" ${state.slide === 10 ? 'disabled' : ''} class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-30 font-semibold">Next →</button>
+                    <div class="flex gap-2">${[...Array(10)].map((_, i) => `<button onclick="state.slide=${i};render()" class="w-3 h-3 rounded-full ${i === state.slide ? 'bg-blue-500 w-8' : 'bg-gray-600'}"></button>`).join('')}</div>
+                    <button onclick="nav(1)" ${state.slide === 9 ? 'disabled' : ''} class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-30 font-semibold">Next →</button>
                 </div>`;
         };
 
